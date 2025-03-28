@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { IconName } from "lucide-react";
 import {
   Search,
   Calendar,
@@ -1336,4 +1337,3 @@ const App = () => {
 }
 
 export default App
-
