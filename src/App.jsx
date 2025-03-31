@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 import { IconName } from "lucide-react";
 import {
   Search,
@@ -13,8 +13,8 @@ import {
   Percent,
   TrendingUp,
   DollarSign,
-} from "lucide-react"
-import "./app.css"
+} from "lucide-react";
+import './App.css';
 
 // Chart components
 const SalesTrendChart = ({ artist }) => {
