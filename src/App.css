@@ -229,10 +229,12 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  height: calc(100vh - 4rem);
+  height: auto; /* Change from 100% to auto */
+  min-height: calc(100vh - 4rem); /* Add min-height to ensure it extends */
   position: sticky;
   top: 4rem;
   overflow-y: auto;
+  flex-shrink: 0; /* Prevent the sidebar from shrinking */
 }
 
 .side-nav-button {
@@ -1211,7 +1213,7 @@
 }
 
 .campaign-chart {
-  grid-column: span 2;
+  grid-column: span 1;
 }
 
 @media (max-width: 1024px) {
@@ -1221,5 +1223,53 @@
 
   .campaign-chart {
     grid-column: span 1;
+  }
+}
+
+/* Update the campaign chart to be the same size as other charts */
+.campaign-chart {
+  grid-column: span 1; /* Change from span 2 to span 1 */
+}
+
+/* Adjust the chart height to match the Tickets Sold chart */
+.campaign-chart .chart-content {
+  min-height: 200px; /* Match the height of other charts */
+}
+
+/* Make sure the chart grid maintains proper layout */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 1024px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Update the campaign chart to be the same size as other charts */
+.campaign-chart {
+  grid-column: span 1; /* Change from span 2 to span 1 */
+}
+
+/* Adjust the chart height to match the Tickets Sold chart */
+.campaign-chart .chart-content {
+  min-height: 200px; /* Match the height of other charts */
+}
+
+/* Make sure the chart grid maintains proper layout */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 1024px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -13,6 +13,7 @@ import {
   TrendingUp,
   DollarSign,
 } from "lucide-react"
+// Add the import for index.css at the top of the file, right after the existing import
 import "./index.css"
 import "./App.css"
 
@@ -288,13 +289,13 @@ const CampaignMetricsChart = ({ artist }) => {
         </div>
       </div>
       <div className="chart-content">
-        <svg width="100%" height="300" viewBox="0 0 600 300">
-          <g transform="translate(50,20)">
+        <svg width="100%" height="200" viewBox="0 0 600 200">
+          <g transform="translate(50,10)">
             {/* X-axis */}
-            <line x1="0" y1="230" x2="500" y2="230" stroke="#e0e0e0" strokeWidth="1" />
+            <line x1="0" y1="180" x2="500" y2="180" stroke="#e0e0e0" strokeWidth="1" />
 
             {/* Y-axis */}
-            <line x1="0" y1="0" x2="0" y2="230" stroke="#e0e0e0" strokeWidth="1" />
+            <line x1="0" y1="0" x2="0" y2="180" stroke="#e0e0e0" strokeWidth="1" />
 
             {/* X-axis labels */}
             {campaigns.length > 0 &&
@@ -302,7 +303,7 @@ const CampaignMetricsChart = ({ artist }) => {
                 <text
                   key={`x-label-${i}`}
                   x={i * (500 / totalGroups) + 500 / totalGroups / 2}
-                  y="250"
+                  y="195"
                   textAnchor="middle"
                   fontSize="12"
                   fill="#666"
@@ -318,7 +319,7 @@ const CampaignMetricsChart = ({ artist }) => {
                 <text
                   key={`y-label-${i}`}
                   x="-10"
-                  y={230 - (i * 230) / 4}
+                  y={180 - (i * 180) / 4}
                   textAnchor="end"
                   fontSize="12"
                   fill="#666"
@@ -333,12 +334,12 @@ const CampaignMetricsChart = ({ artist }) => {
             {campaigns.map((campaign, campaignIndex) => (
               <g key={`bars-${campaign.id}`}>
                 {campaign.data.map((d, weekIndex) => {
-                  const barHeight = (d[selectedMetric] / maxValue) * 230
+                  const barHeight = (d[selectedMetric] / maxValue) * 180
                   const barX =
                     weekIndex * (500 / totalGroups) +
                     campaignIndex * (barWidth + barSpacing) +
                     (500 / totalGroups - groupWidth) / 2
-                  const barY = 230 - barHeight
+                  const barY = 180 - barHeight
                   const barId = `bar-${campaign.id}-${weekIndex}`
 
                   return (
