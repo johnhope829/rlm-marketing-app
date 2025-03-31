@@ -13,6 +13,7 @@ import {
   TrendingUp,
   DollarSign,
 } from "lucide-react"
+import "./index.css"
 import "./App.css"
 
 // Chart components

@@ -1,65 +1,112 @@
-body {
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
   margin: 0;
-  background: linear-gradient(180deg, rgb(117, 81, 194), rgb(255, 255, 255));
-  display: flex;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  height: 100vh;
-  width: 100vw;
-  justify-content: center;
-  align-items: center;
+  padding: 0;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f9fafb;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  color: white;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-ul {
-  padding-inline-start: 0;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  list-style-type: none;
+#root {
   display: flex;
   flex-direction: column;
-  margin: 8px 0;
-  border: 1px solid black;
-  gap: 1px;
-  background-color: black;
-  border-radius: 8px;
-  overflow: auto;
+  min-height: 100vh;
+  width: 100%;
 }
 
-li {
-  background-color: white;
-  padding: 8px;
+/* Make sure the app container takes full height */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-li:hover {
-  background: #dadbf9;
+/* Ensure the content area expands properly */
+.app-content-container {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
 }
 
-a {
-  font-weight: 800;
-  text-decoration: none;
+/* Adjust the main content area */
+.app-content {
+  flex: 1;
+  padding: var(--space-6);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure the side nav doesn't cause overflow */
+.side-nav {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+/* Make sure tables don't cause horizontal overflow */
+.results-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .app-content {
+    padding: var(--space-4);
+  }
+}
+
+@media (max-width: 768px) {
+  .app-content-container {
+    flex-direction: column;
+  }
+
+  .side-nav {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+/* Fix for the info pane */
+.info-pane {
+  z-index: 1000;
+}
+
+/* Ensure charts are responsive */
+.chart-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.chart-content svg {
+  max-width: 100%;
+}
+
+/* Fix for the grid layouts */
+.shows-grid,
+.metrics-grid,
+.charts-grid,
+.insights-grid,
+.info-list-grid {
+  width: 100%;
+  max-width: 100%;
 }
