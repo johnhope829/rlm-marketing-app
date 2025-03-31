@@ -1,7 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react";
-import { IconName } from "lucide-react";
+import { useState, useEffect } from "react"
 import {
   Search,
   Calendar,
@@ -13,8 +12,8 @@ import {
   Percent,
   TrendingUp,
   DollarSign,
-} from "lucide-react";
-import './App.css';
+} from "lucide-react"
+import "./App.css"
 
 // Chart components
 const SalesTrendChart = ({ artist }) => {
@@ -234,7 +233,7 @@ const CampaignMetricsChart = ({ artist }) => {
   useEffect(() => {
     // Generate mock data for campaigns - only Instagram and Facebook
     const campaignNames = ["Instagram", "Facebook"]
-    const campaignColors = ["#f59e0b", "#10b981"] // Instagram pink/purple, Facebook blue
+    const campaignColors = ["#E1306C", "#4267B2"] // Instagram pink/purple, Facebook blue
     const timePoints = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6"]
 
     const mockCampaigns = campaignNames.map((name, idx) => {
@@ -1176,7 +1175,7 @@ const App = () => {
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
           <div className="app-logo">
-            <img src="/rlm.png" alt="RLM" className="app-icon" />
+            <img src="/rlm.png" alt="RLM Marketing" className="app-icon" />
           </div>
         </div>
 
